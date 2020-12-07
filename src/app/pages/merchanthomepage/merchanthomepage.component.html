@@ -1,0 +1,94 @@
+<body>
+<h1 id="scroll-to-top"></h1>
+<!-- Start: Contact Form Clean -->
+<div id="main" class="contact-clean" style="background-color: rgb(255,255,255);">
+  <div class="container" data-aos="fade" data-aos-duration="800" data-aos-delay="50" id="here">
+    <div class="d-flex flex-column justify-content-center">
+      <div class="text-center border rounded shadow all" id="que"
+           style="min-height: 300px;max-width: 350px;margin: 0px auto;padding: 40px;">
+        <h3 *ngIf="currentQueue.length !== 0" class="text-capitalize text-center">Your Queue</h3>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item text-capitalize" *ngFor="let cq of currentQueue">
+            <h5>{{'User name: ' + cq.username }} </h5> <br>
+            {{ 'User\'s Queue id: ' + cq._id }} <br>{{'User\'s phone: ' + cq.userphone}}<br>
+            <a (click)="turnIn(cq._id)" class="card-link">Click here</a> to turn in.
+          </li>
+        </ul>
+        <h3 *ngIf="currentQueue.length === 0" class="text-capitalize text-center">Sorry, Your queue is empty!!!</h3>
+      </div>
+      <div>
+        <p class="text-center" style="margin: 20px 0px;">Users that want your service will stand in your queue which
+          will be displayed above.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End: Contact Form Clean -->
+<!-- Start: Contact Form Clean -->
+<div id="aboutus" class="contact-clean" style="background-color: rgb(247,247,247);height: 734.333px;">
+  <div class="container">
+    <div class="d-flex flex-column justify-content-center">
+      <div class="text-center all"><img data-aos="fade" data-aos-delay="200" class="pic"
+                                        src="../../../assets/img/wfh_7.svg?h=8946cb83cb7cd3a8f8d4865018c93ab1"
+                                        style="font-size: 17px;"></div>
+      <div>
+        <h1 class="text-capitalize text-center" data-aos="fade" data-aos-delay="200">We are your
+          protector</h1>
+        <p class="text-center" data-aos="fade" data-aos-delay="200">We are Ghost developers. We make product that can
+          used to protect from real world problems and stand with the new era of emerging world. We make product with
+          our fully heart to protect your privacy not to reveal at third party. So,
+          let get dive into this world of wait.</p>
+      </div>
+      <div class="text-center"></div>
+    </div>
+  </div>
+</div>
+<!-- End: Contact Form Clean -->
+<header id="idea"
+        style="height: 734.333px;background: url(../../../assets/img/Kander.svg?h=5a6dbcb17e05fb0f8c4faa49ca8d332b) center / cover no-repeat;">
+  <div class="container">
+    <div class="d-flex flex-column justify-content-center">
+      <div class="text-center all"><img data-aos="fade-up" data-aos-delay="250" class="pic"
+                                        src="../../../assets/img/wfh_8.svg?h=cba198b86dd83fd2df277d842e623168"
+                                        style="font-size: 17px;"></div>
+      <div>
+        <h1 class="text-capitalize text-center" data-aos="fade-up" data-aos-delay="250">Idea all the way</h1>
+        <p class="text-center" data-aos="fade-up" data-aos-delay="250">We get ideas from our surrounding where people
+          hate something to do and we turns that hate of people towards things into ease, love. We are ideas from you,
+          Thank you people. The idea of queue emerges from pandemic of COVID-19, where
+          people have to maintain social distancing and have to wait into queue of almost 5 km long to buy daily
+          households. So, The Queue is small contribution towards people.</p>
+      </div>
+      <div class="text-center"></div>
+    </div>
+  </div>
+</header>
+<!-- Start: Login Form Clean -->
+<div id="contactus" class="login-clean" style="background-color: rgb(247,247,247);color: rgb(0,0,0);">
+  <form data-aos="zoom-in" data-aos-duration="1300" data-aos-delay="200" id="contact" method="get"
+        action="homepage.html">
+    <h2 class="text-center">Contact us</h2>
+    <div class="form-group">
+      <p><strong>Name&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" type="text"
+                                                                                 name="" placeholder="E.x. John"
+                                                                                 required=""></div>
+    <div class="form-group">
+      <p><strong>Email&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" type="email"
+                                                                                  name="" placeholder="user@domain.com"
+                                                                                  required=""></div>
+    <div class="form-group">
+      <p><strong>Message&nbsp;</strong><span class="text-danger">*</span></p><textarea
+      class="border rounded form-control" name="message" placeholder="Message" rows="14" required="" spellcheck="true"
+      style="height: 100px;"></textarea></div>
+    <div
+      class="form-group">
+      <button class="btn btn-primary btn-block text-uppercase border rounded border-dark" type="submit"
+              style="border-style: none;background-color: rgb(0,0,0);font-size: 16px;">send
+      </button>
+    </div>
+  </form>
+</div>
+<!-- End: Login Form Clean -->
+</body>
+

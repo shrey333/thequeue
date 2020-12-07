@@ -1,0 +1,116 @@
+
+<!-- Start: Login Form Clean -->
+<div class="login-clean"
+     style="background: url(../../../assets/img/Taieri.svg?h=163fd19d9c8d684c5492ac111914bed4) center / cover no-repeat;background-color: rgb(247,247,247);color: rgb(0,0,0);">
+  <div data-aos="zoom-in" data-aos-duration="1300" data-aos-delay="200" style="border-style: none;">
+    <ul class="nav nav-tabs text-uppercase text-center border rounded border-light shadow" role="tablist"
+        style="max-width: 320px;margin: 0 auto;width: 100%;border-style: none;background: rgba(255,255,255,0.65);border-top: 1.3333px none #495057;">
+      <li class="nav-item" role="presentation" style="color: rgb(0,0,0);width: 50%;text-align: center;"><a
+        class="nav-link active" role="tab" data-toggle="tab" href="#tab-1"
+        style="border-style: none;color: rgb(0,0,0);">USER</a></li>
+      <li class="nav-item" role="presentation" style="width: 50%;text-align: center;"><a class="nav-link" role="tab"
+                                                                                         data-toggle="tab" href="#tab-2"
+                                                                                         style="border-style: none;color: rgb(0,0,0);">MERCHANT</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" role="tabpanel" id="tab-1">
+        <form class="shadow" [formGroup]="loginForm" (ngSubmit)="onSubmit()"
+              style="border: 1.3333px none #495057;padding-top: 0px;width: 90%;height: auto;margin: 0px auto;">
+          <h2 class="sr-only">Login Form</h2>
+          <div class="illustration"><i class="fab fa-umbraco" style="color: rgb(0,0,0);"></i></div>
+          <div class="form-group">
+            <p><strong><label for="email">Email</label></strong><span class="text-danger">*</span></p><input id="email" class="form-control" type="email"
+                                                                                  name="email" (change)="userEmailUnique()"
+                                                                                  placeholder="user@domain.com"
+                                                                                  autofocus="" formControlName="email">
+            <div *ngIf="email.invalid && (email.dirty || email.touched)"
+                 class="alert alert-danger">
+              <div *ngIf="email.errors.required">
+                Email is required.
+              </div>
+              <div *ngIf="email.errors.pattern">
+                Email pattern is not correct.
+              </div>
+            </div>
+          </div>
+          <div *ngIf="!userEmailTaken" class="alert alert-danger">
+            Email does not exists.
+          </div>
+          <div class="form-group">
+            <p><strong><label for="upassword">Password</label></strong><span class="text-danger">*</span></p><input id="upassword" class="form-control"
+                                                                                           type="password"
+                                                                                           name="password"
+                                                                                           placeholder="Ex. U2$e1R3@"
+                                                                                           formControlName="password">
+            <div *ngIf="password.invalid && (password.dirty || password.touched)"
+                 class="alert alert-danger">
+              <div *ngIf="password.errors.required">
+                Password is required.
+              </div>
+              <div *ngIf="password.errors.pattern">
+                Password pattern is not correct.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary btn-block text-uppercase" type="submit" [disabled]="!this.loginForm.valid"
+                    style="background-color: rgb(0,0,0);">Log In
+            </button>
+          </div>
+          <a class="forgot" href="#">Forgot your email or password?</a><a class="forgot" routerLink="/index/register"
+                                                                          routerLinkActive="true">Register
+          here</a></form>
+      </div>
+      <div class="tab-pane" role="tabpanel" id="tab-2">
+        <form class="shadow" [formGroup]="merchantloginForm" (ngSubmit)="merchantSubmit()"
+              style="border-radius: 1.3333px;border-style: none;border-color: #495057;padding-top: 0px;">
+          <h2 class="sr-only">Login Form</h2>
+          <div class="illustration"><i class="fab fa-monero" style="color: rgb(0,0,0);"></i></div>
+          <div class="form-group">
+            <p><strong><label for="merchantid">Merchant ID</label></strong><span class="text-danger">*</span></p><input id="merchantid" class="form-control"
+                                                                                              type="email" name="email"
+                                                                                              placeholder="merchant@queue.io"
+                                                                                              autofocus="" (change)="merchantEmailUnique()"
+                                                                                              formControlName="email">
+            <div *ngIf="memail.invalid && (memail.dirty || memail.touched)"
+                 class="alert alert-danger">
+              <div *ngIf="memail.errors.required">
+                Email is required.
+              </div>
+              <div *ngIf="memail.errors.pattern">
+                Email pattern is not correct.
+              </div>
+            </div>
+            <div *ngIf="!merchantEmailTaken" class="alert alert-danger">
+              Email does not exists.
+            </div>
+          </div>
+          <div class="form-group">
+            <p><strong><label for="mpassword">Password&nbsp;</label></strong><span class="text-danger">*</span></p><input id="mpassword" class="form-control"
+                                                                                           type="password"
+                                                                                           name="password"
+                                                                                           placeholder="Ex. U2$e1R3@"
+                                                                                           formControlName="password">
+            <div *ngIf="mpassword.invalid && (mpassword.dirty || mpassword.touched)"
+                 class="alert alert-danger">
+              <div *ngIf="mpassword.errors.required">
+                Password is required.
+              </div>
+              <div *ngIf="mpassword.errors.pattern">
+                Password pattern is not correct.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary btn-block text-uppercase" type="submit" [disabled]="!this.merchantloginForm.valid"
+                    style="background-color: rgb(0,0,0);">Log In
+            </button>
+          </div>
+          <a class="forgot" href="#">Forgot your email or password?</a><a class="forgot" routerLink="/merchant/partner" routerLinkActive="true">Register
+          here</a></form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End: Login Form Clean -->

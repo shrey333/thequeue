@@ -1,0 +1,203 @@
+
+<div
+  style="background: url('assets/img/Aare.svg?h=7426e2ae4f307b97f9f7e47ed425b5e0') center / cover no-repeat;padding: 50px 0px;">
+  <!--Start: Application Form-->
+  <section>
+    <div class="container">
+      <form [formGroup]="merchantForm" (ngSubmit)="onSubmit()" class="border rounded shadow" data-aos="zoom-in"
+            data-aos-duration="1200" data-aos-delay="400" id="application-form"
+            style="background-color: #ffffff;padding: 40px;">
+        <h1 class="text-center text-capitalize"
+            style="margin: 0px;padding: 20px 0px;padding-top: 0px;padding-bottom: 40px;">Your Information</h1>
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col">
+              <p><strong><label for="firstname">First Name</label></strong>&nbsp;<span class="text-danger">*</span></p>
+              <input id="firstname" class="form-control"
+                     type="text"
+                     placeholder="Ex. John"
+                     autofocus=""
+                     formControlName="firstname">
+              <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="firstname.errors.required">
+                  Firstname is required.
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <p><strong><label for="lastname">Last Name</label></strong>&nbsp;<span class="text-danger">*</span></p>
+              <input id="lastname" class="form-control"
+                     type="text"
+                     placeholder="Ex. Smith"
+                     formControlName="lastname">
+              <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="lastname.errors.required">
+                  Lastname is required.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col">
+              <p><strong><label for="shopname">Shop Name</label></strong>&nbsp;<span
+                class="text-danger">*</span>
+              </p><input id="shopname" class="form-control"
+                         type="text"
+                         formControlName="shopname" placeholder="Ex. Apollo Hospital" required>
+              <!--<div *ngIf="shopname.invalid && (shopname.dirty || shopname.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="shopname.errors.required">
+                  Shop name is required.
+                </div>
+              </div>-->
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <p><strong><label for="email">Email&nbsp;</label></strong><span class="text-danger">*</span></p><input
+          id="email" class="form-control" type="email"
+          placeholder="user@domain.com"
+          formControlName="email" disabled>
+          <div *ngIf="email.invalid && (email.dirty || email.touched)"
+               class="alert alert-danger">
+            <div *ngIf="email.errors.required">
+              Email is required.
+            </div>
+            <div *ngIf="email.errors.pattern">
+              Email pattern is not correct.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <p><strong><label for="password">Password&nbsp;</label></strong><span class="text-danger">*</span></p><input
+          id="password" class="form-control"
+          type="password"
+          placeholder="Ex. U2$e1R3@"
+          formControlName="password" disabled>
+          <div *ngIf="password.invalid && (password.dirty || password.touched)"
+               class="alert alert-danger">
+            <div *ngIf="password.errors.required">
+              Password is required.
+            </div>
+            <div *ngIf="password.errors.pattern">
+              Strong password can contains-
+              <ul>
+                <li>At least 8 characters in length.</li>
+                <li>At least one Lowercase letter.</li>
+                <li>At least one Uppercase letter.</li>
+                <li>At least one Number.</li>
+                <li>At least one Special character.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!--<div class="form-group">
+          <p><strong><label for="confirmpassword">Confirm Password&nbsp;</label></strong><span
+            class="text-danger">*</span></p><input id="confirmpassword" class="form-control"
+                                                   type="password"
+                                                   placeholder="Ex. U2$e1R3@"
+                                                   formControlName="password">
+        </div>-->
+        <div class="form-group">
+          <p><strong><label for="mobilenumber">Mobile Number</label></strong><span class="text-danger">*</span></p>
+          <input id="mobilenumber" class="form-control"
+                 type="number"
+                 placeholder="9876543210"
+                 formControlName="mobilenumber">
+          <div *ngIf="mobilenumber.invalid && (mobilenumber.dirty || mobilenumber.touched)"
+               class="alert alert-danger">
+            <div *ngIf="mobilenumber.errors.required">
+              Mobile number is required.
+            </div>
+            <div *ngIf="mobilenumber.errors.pattern">
+              Enter valid mobile number.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <p><strong><label for="address1">Address&nbsp;</label></strong><span class="text-danger">*</span></p><input
+          id="address1" class="form-control" type="text"
+          placeholder="Ex. Room No-361, 33/1, 3rd Floor"
+          formControlName="address1">
+          <div *ngIf="address1.invalid && (address1.dirty || address1.touched)">
+            <div *ngIf="address1.errors.required">
+              Address1 is required.
+            </div>
+          </div>
+          <p><label for="address1">Address Line 1</label><br></p><input id="address2" class="form-control" type="text"
+                                                                        placeholder="Ex. Marshal House, N S Road"
+                                                                        formControlName="address2">
+          <div *ngIf="address2.invalid && (address2.dirty || address2.touched)"
+               class="alert alert-danger">
+            <div *ngIf="address2.errors.required">
+              Address2 is required.
+            </div>
+          </div>
+          <p><label for="address2">Address Line 2</label><br></p>
+        </div>
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col"><input id="city" class="form-control" type="text" placeholder="Ex. Kolkata"
+                                    formControlName="city">
+              <div *ngIf="city.invalid && (city.dirty || city.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="city.errors.required">
+                  City is required.
+                </div>
+              </div>
+              <p><label for="city">City</label></p><input id="pincode" class="form-control" type="text"
+                                                          placeholder="Ex. 700001"
+                                                          formControlName="pincode">
+              <div *ngIf="pincode.invalid && (pincode.dirty || pincode.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="pincode.errors.required">
+                  Pin Code is required.
+                </div>
+                <div *ngIf="pincode.errors.pattern">
+                  Enter valid pincode.
+                </div>
+              </div>
+              <p><label for="pincode">Pin Code</label></p>
+            </div>
+            <div class="col"><input id="state" class="form-control" type="text" placeholder="Ex. West Bengal"
+                                    formControlName="state">
+              <div *ngIf="state.invalid && (state.dirty || state.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="state.errors.required">
+                  State is required.
+                </div>
+              </div>
+              <p><label for="state">State</label></p>
+            </div>
+          </div>
+        </div>
+        <div class="form-group" style="margin: 50px;margin-right: 0px;margin-left: 0px;">
+          <div class="form-row text-center">
+            <div class="col">
+              <button class="btn btn-primary text-uppercase border rounded border-dark" type="submit" [disabled]="!this.merchantForm.valid"
+                      style="width: 100%;background-color: rgb(0,0,0);border-style: none;padding: 16px 32px;">Update
+              </button>
+            </div>
+            <div class="col">
+              <button class="btn btn-danger text-uppercase border rounded border-danger" type="reset" (click)="onDelete()"
+                      style="width: 100%;background-color: rgb(0,0,0);border-style: none;padding: 16px 32px;">Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col">
+      <h3 id="fail" class="text-center text-danger d-none" style="color: rgb(0,0,0);"><br>Form not Submitted&nbsp;<a
+        href="contact.html">Try Again</a><br><br></h3>
+      <h3 id="success-1" class="text-center text-success d-none"><br>Form Submitted Successfully&nbsp;<a
+        href="contact.html">Send Another Response</a><br><br></h3>
+    </div>
+  </section>
+  <!--   End: Application Form-->
+</div>
+
